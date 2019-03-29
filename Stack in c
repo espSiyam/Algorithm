@@ -1,0 +1,49 @@
+#include<stdio.h>
+#define stacksize 3
+int mystack[stacksize],top=-1;
+void push(int value)
+{
+    if(top>=stacksize-1)
+        printf("Stack overflow");
+    else
+    {
+        printf("PUSH: %d\n", value);
+        mystack[++top]=value;
+    }
+}
+void peek()
+{
+    if(top==-1)
+        printf("Stack is empty");
+    else
+        printf("TOP: %d",mystack[top]);
+}
+void pop()
+{
+    if(top<0)
+        printf("Stack underflow");
+    else
+    {
+        printf("%d is popped from stack: \n",mystack[top]);
+        top--;
+    }
+}
+void displayStack()
+{
+    int i;
+    for(i=top; i>=0; i--)
+    {
+        printf("%d\n",mystack[i]);
+    }
+}
+int main()
+{
+    push(5);
+    push(90);
+    push(12);
+    displayStack();
+    pop();
+    displayStack();
+    printf("\nTop value of this Stack:   ");
+    peek();
+}
