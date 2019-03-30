@@ -1,4 +1,5 @@
-#include<stdio.h>
+#include<iostream>
+using namespace std;
 
 bubble_sort(int arr[],int n)
 {
@@ -9,9 +10,7 @@ bubble_sort(int arr[],int n)
         {
             if(arr[j]>arr[j+1])
             {
-                temp =arr[j];
-                arr[j]=arr[j+1];
-                arr[j+1]=temp;
+                swap(arr[j],arr[j+1]);
             }
         }
     }
